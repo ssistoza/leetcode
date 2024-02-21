@@ -4,7 +4,7 @@
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
     "target": "ESNext",
-    "verbatimModuleSyntax": true,
+    "verbatimModuleSyntax": false,
     "allowJs": true,
     "resolveJsonModule": true,
     "moduleDetection": "force",
@@ -15,10 +15,11 @@
     "moduleResolution": "NodeNext",
     "paths": {
       "~lib/*": ["lib/*"]
-    }
+    },
+    "types": ["vitest/importMeta"]
   },
   "exclude": ["node_modules"],
-  "include": ["**/*.ts"],
+  "include": ["**/*.spec.ts"],
   "ts-node": {
     "esm": true
   }
