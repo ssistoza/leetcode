@@ -19,7 +19,7 @@
     "types": ["vitest/importMeta"]
   },
   "exclude": ["node_modules"],
-  "include": ["**/*.spec.ts"],
+  "include": ["src"],
   "ts-node": {
     "esm": true
   }
