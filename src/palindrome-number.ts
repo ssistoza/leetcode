@@ -17,6 +17,12 @@ const _isPalindrome: Record<string, (x: number) => boolean> = {
 
     return true;
   },
+  v2(x: number): boolean {
+    if (x < 0) return false;
+    if (x < 10) return true;
+    const str = x.toString();
+    return str === str.split('').reverse().join('');
+  },
 };
 
 export const isPalindrome = Object.entries(_isPalindrome);
