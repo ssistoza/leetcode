@@ -1,7 +1,7 @@
-import { test } from 'vitest';
+import { test as _vitest } from 'vitest';
 
-export function measure(str: string, fn: (ctx: any) => void) {
-  test(str, (ctx) => {
+export function test(str: string, fn: (ctx: any) => void) {
+  _vitest(str, (ctx) => {
     const start = performance.now();
     fn(ctx);
     const end = performance.now();

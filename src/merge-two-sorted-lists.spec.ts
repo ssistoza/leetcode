@@ -1,5 +1,6 @@
-import { describe, expect, test } from 'vitest';
+import { describe, expect } from 'vitest';
 import { ListNode, mergeTwoLists } from './merge-two-sorted-lists.js';
+import { test } from '~lib/vitest.js';
 
 describe.each(mergeTwoLists)('mergeTwoLists %s', (_, fn) => {
   test('[1,2,4], [1,3,4]', () => {

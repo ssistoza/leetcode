@@ -1,25 +1,25 @@
 import { describe, expect } from 'vitest';
 import { romanToInt } from './roman-to-integer.js';
-import { measure } from '~lib/vitest.js';
+import { test } from '~lib/vitest.js';
 
 describe.each(romanToInt)('romanToInt %s', (_, fn) => {
-  measure('III', () => {
+  test('III', () => {
     expect(fn('III')).toBe(3);
   });
 
-  measure('IV', () => {
+  test('IV', () => {
     expect(fn('IV')).toBe(4);
   });
 
-  measure('IX', () => {
+  test('IX', () => {
     expect(fn('IX')).toBe(9);
   });
 
-  measure('LVIII', () => {
+  test('LVIII', () => {
     expect(fn('LVIII')).toBe(58);
   });
 
-  measure('MCMXCIV', () => {
+  test('MCMXCIV', () => {
     expect(fn('MCMXCIV')).toBe(1994);
   });
 });

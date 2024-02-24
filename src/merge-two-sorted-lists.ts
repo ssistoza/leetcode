@@ -19,6 +19,8 @@ export class ListNode {
   }
 
   static construct(list: number[]) {
+    if (!list.length) return null;
+
     const [first, ...rest] = list;
 
     const start = new ListNode(first);
