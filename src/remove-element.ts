@@ -16,7 +16,6 @@ const _removeElement = {
       }
     }
 
-    console.log({ ptr });
     return ptr.shift()!;
   },
 };
