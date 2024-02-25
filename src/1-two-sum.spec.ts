@@ -1,8 +1,8 @@
 import { expect, describe } from 'vitest';
-import { twoSum } from './two-sum.js';
+import { twoSum } from './1-two-sum.js';
 import { test } from '~lib/vitest.js';
 
-describe.each(twoSum)('twoSum %s', (_, fn) => {
+describe.each(twoSum)('1. twoSum %s', (_, fn) => {
   test('nums = [2,7,11,15], target = 9', () => {
     expect(fn([2, 7, 11, 15], 9)).toEqual([0, 1]);
   });

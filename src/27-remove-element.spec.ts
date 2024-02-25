@@ -1,8 +1,8 @@
 import { describe, expect } from 'vitest';
-import { removeElement } from './remove-element.js';
+import { removeElement } from './27-remove-element.js';
 import { test } from '~lib/vitest.js';
 
-describe.each(removeElement)('removeElement %s', (_, fn) => {
+describe.each(removeElement)('27. removeElement %s', (_, fn) => {
   test('[3,2,2,3], 3', () => {
     const num = [3, 2, 2, 3];
     expect(fn(num, 3)).toEqual(2);

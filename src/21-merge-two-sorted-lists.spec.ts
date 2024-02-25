@@ -1,8 +1,8 @@
 import { describe, expect } from 'vitest';
-import { ListNode, mergeTwoLists } from './merge-two-sorted-lists.js';
+import { ListNode, mergeTwoLists } from './21-merge-two-sorted-lists.js';
 import { test } from '~lib/vitest.js';
 
-describe.each(mergeTwoLists)('mergeTwoLists %s', (_, fn) => {
+describe.each(mergeTwoLists)('21. mergeTwoLists %s', (_, fn) => {
   test('[1,2,4], [1,3,4]', () => {
     expect(
       fn(ListNode.construct([1, 2, 4]), ListNode.construct([1, 3, 4]))

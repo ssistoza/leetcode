@@ -18,4 +18,8 @@ describe.each(strStr)('28. strStr %s', (_, fn) => {
   test('haystack = "mississippi", needle = "issip"', () => {
     expect(fn('mississippi', 'issip')).toBe(4);
   });
+
+  test('haystack = "babbbbbabb", needle = "bbab"', () => {
+    expect(fn('babbbbbabb', 'bbab')).toBe(5);
+  });
 });

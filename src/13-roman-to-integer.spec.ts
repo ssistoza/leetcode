@@ -1,8 +1,8 @@
 import { describe, expect } from 'vitest';
-import { romanToInt } from './roman-to-integer.js';
+import { romanToInt } from './13-roman-to-integer.js';
 import { test } from '~lib/vitest.js';
 
-describe.each(romanToInt)('romanToInt %s', (_, fn) => {
+describe.each(romanToInt)('13. romanToInt %s', (_, fn) => {
   test('III', () => {
     expect(fn('III')).toBe(3);
   });

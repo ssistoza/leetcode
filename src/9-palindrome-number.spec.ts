@@ -1,8 +1,8 @@
 import { describe, expect } from 'vitest';
-import { isPalindrome } from './palindrome-number.js';
+import { isPalindrome } from './9-palindrome-number.js';
 import { test } from '~lib/vitest.js';
 
-describe.each(isPalindrome)('isPalindrome %s', (_, fn) => {
+describe.each(isPalindrome)('9. isPalindrome %s', (_, fn) => {
   test('121', () => {
     expect(fn(121)).toBe(true);
   });

@@ -1,26 +1,26 @@
 const _strStr = {
   v1(haystack: string, needle: string): number {
     let ptr = 0;
-    let found = [];
+    let found = new Set();
 
     for (let i = 0; i < haystack.length; i++) {
       const h = haystack[i];
       if (h !== needle[ptr]) {
         ptr = 0;
-        const start = found.shift();
 
-        if (start !== undefined) {
-          i = start;
+        if (found.size !== 0) {
+          i = found.values().next().value;
+          found.delete(i);
         }
 
         continue;
       }
 
-      found.push(i);
+      found.add(i);
       ptr++;
 
       if (ptr === needle.length) {
-        return found.shift()!;
+        return found.values().next().value;
       }
     }
 
