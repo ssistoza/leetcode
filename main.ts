@@ -6,7 +6,7 @@ import { hideBin } from 'yargs/helpers';
 const argv = yargs(hideBin(process.argv)).argv;
 const _argv = argv as Awaited<typeof argv>;
 const filename = String(_argv._[0]);
-const runs = (_argv.runs as number) ?? 10;
+const runs = (_argv.runs as number) ?? 9;
 
 const testfile = fs
   .readdirSync('./src')
@@ -19,13 +19,11 @@ console.log();
 for (const [version, fn] of fns) {
   console.log(c.magenta(`File: ${testfile}, Version: ${version}`));
 
-  for (let i = 0; i < runs; i++) {
+  for (let i = 0; i < runs + 1; i++) {
     const start = performance.now();
-    // TODO: Measure the heap usage too would be nice.
-    const before = process.memoryUsage();
     fn(...testcase);
-    const after = process.memoryUsage();
     const end = performance.now();
-    console.log(c.bold(c.white(`Run ${i + 1}: `)), c.yellow(end - start));
+    i !== 0 &&
+      console.log(c.bold(c.white(`Run ${i + 1}: `)), c.yellow(end - start));
   }
 }
