@@ -20,3 +20,7 @@ const _plusOne = {
 };
 
 export const plusOne = Object.entries(_plusOne);
+export default {
+  fns: plusOne,
+  testcase: [[4, 3, 2, 1]],
+};

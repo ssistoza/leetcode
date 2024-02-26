@@ -54,3 +54,7 @@ const _mergeTwoLists = {
 };
 
 export const mergeTwoLists = Object.entries(_mergeTwoLists);
+export default {
+  fns: mergeTwoLists,
+  testcase: [ListNode.construct([1, 2, 4]), ListNode.construct([1, 3, 4])],
+};

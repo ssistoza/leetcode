@@ -35,4 +35,7 @@ const _romanToInt = {
 };
 
 export const romanToInt = Object.entries(_romanToInt);
-export default romanToInt;
+export default {
+  fns: romanToInt,
+  testcase: [['dog', 'racecar', 'car']],
+};

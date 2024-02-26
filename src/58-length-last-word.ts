@@ -20,3 +20,7 @@ const _lengthOfLastWord = {
 };
 
 export const lengthOfLastWord = Object.entries(_lengthOfLastWord);
+export default {
+  fns: lengthOfLastWord,
+  testcase: ['   fly me   to   the moon  '],
+};

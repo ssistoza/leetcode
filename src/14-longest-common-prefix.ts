@@ -18,3 +18,11 @@ const _longestCommonPrefix: Record<string, (strs: string[]) => string> = {
 };
 
 export const longestCommonPrefix = Object.entries(_longestCommonPrefix);
+
+export default {
+  fns: longestCommonPrefix,
+  testcase: [
+    ['flower', 'flow', 'flight'],
+    ['dog', 'racecar', 'car'],
+  ],
+};

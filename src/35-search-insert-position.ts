@@ -16,3 +16,7 @@ const _searchInsert = {
 };
 
 export const searchInsert = Object.entries(_searchInsert);
+export default {
+  fns: searchInsert,
+  testcase: [[[1, 3, 5, 6], 7]],
+};

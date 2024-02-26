@@ -21,3 +21,8 @@ const _removeElement = {
 };
 
 export const removeElement = Object.entries(_removeElement);
+
+export default {
+  fns: removeElement,
+  testcase: [[0, 1, 2, 2, 3, 0, 4, 2], 2],
+};

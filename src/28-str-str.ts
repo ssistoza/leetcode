@@ -29,3 +29,7 @@ const _strStr = {
 };
 
 export const strStr = Object.entries(_strStr);
+export default {
+  fns: strStr,
+  testcase: [['babbbbbabb', 'bbab']],
+};

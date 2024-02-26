@@ -13,7 +13,6 @@ const testfile = fs
   .filter((f) => f.startsWith(filename!) && !f.endsWith('spec.ts'))
   .at(0);
 
-console.log({ testfile });
 const { fns, testcase } = (await import(`./src/${testfile}`)).default;
 
 console.log();
@@ -22,6 +21,7 @@ for (const [version, fn] of fns) {
 
   for (let i = 0; i < runs; i++) {
     const start = performance.now();
+    // TODO: Measure the heap usage too would be nice.
     const before = process.memoryUsage();
     fn(...testcase);
     const after = process.memoryUsage();
