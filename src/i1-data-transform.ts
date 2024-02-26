@@ -1,5 +1,28 @@
 import fs from 'node:fs';
+import f, { Readable, Writable } from 'node:stream';
+
 import csv from 'fast-csv';
+
+const metData = fs.existsSync('./lib/met.csv');
+if (metData) {
+  await fetch(
+    'https://media.githubusercontent.com/media/metmuseum/openaccess/master/MetObjects.csv'
+  )
+    .then((res) => res.body)
+    .then((data) => {
+      return new Promise((resolve) => {
+        // @ts-ignore
+        const rs = Readable.fromWeb(data);
+        const ws = fs.createWriteStream('./lib/met.csv');
+        // @ts-ignore
+        const t = rs.pipe(ws);
+
+        ws.on('finish', () => {
+          resolve(true);
+        });
+      });
+    });
+}
 
 const data = new Promise((resolve) => {
   const _data: unknown[] = [];
