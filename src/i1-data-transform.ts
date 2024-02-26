@@ -1,5 +1,5 @@
 import fs from 'node:fs';
-import f, { Readable, Writable } from 'node:stream';
+import { Readable } from 'node:stream';
 
 import csv from 'fast-csv';
 
