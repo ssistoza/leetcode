@@ -35,3 +35,4 @@ const _romanToInt = {
 };
 
 export const romanToInt = Object.entries(_romanToInt);
+export default romanToInt;

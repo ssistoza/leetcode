@@ -31,3 +31,7 @@ const _twoSum = {
 };
 
 export const twoSum = Object.entries(_twoSum);
+export default {
+  fns: twoSum,
+  testcase: [[2, 7, 11, 15], 9],
+};

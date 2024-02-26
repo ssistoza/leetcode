@@ -26,3 +26,4 @@ const _isPalindrome: Record<string, (x: number) => boolean> = {
 };
 
 export const isPalindrome = Object.entries(_isPalindrome);
+export default isPalindrome;
