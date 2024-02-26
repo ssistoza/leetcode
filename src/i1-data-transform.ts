@@ -1,23 +1,33 @@
+import fs from 'node:fs';
+import csv from 'fast-csv';
+
+const data = new Promise((resolve) => {
+  const _data: unknown[] = [];
+  fs.createReadStream('./lib/met.csv', 'utf8')
+    .pipe(csv.parse({ headers: true }))
+    .on('error', (error) => console.error(error))
+    .on('data', (row) => {
+      _data.push(row);
+    })
+    .on('end', () => resolve(_data));
+});
+
+const val = (await data) as any[];
+
 const _dataTransform = {
   async v1() {
-    const data = await fetch('https://emojihub.yurace.pro/api/all');
-    const json = (await data.json()) as { name: string; category: string }[];
-
-    return json
-      .filter((val) => val.category === 'flags')
-      .map((val) => val.name);
+    const asianArt = val
+      .filter((v: any) => v.Department === 'Asian Art')
+      .map((v: any) => v['Object Name']);
+    return asianArt;
   },
   async v2() {
-    const data = await fetch('https://emojihub.yurace.pro/api/all');
-    const json = (await data.json()) as { name: string; category: string }[];
-
     const vals = [];
-    for (const val of json) {
-      if (val.category === 'flags') {
-        vals.push(val.name);
+    for (const v of val) {
+      if (v.Department === 'Asian Art') {
+        vals.push(v['Object Name']);
       }
     }
-
     return vals;
   },
 };

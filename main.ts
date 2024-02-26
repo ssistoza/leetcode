@@ -24,6 +24,6 @@ for (const [version, fn] of fns) {
     fn(...testcase);
     const end = performance.now();
     i !== 0 &&
-      console.log(c.bold(c.white(`Run ${i + 1}: `)), c.yellow(end - start));
+      console.log(c.bold(c.white(`Run ${i}: `)), c.yellow(end - start));
   }
 }
