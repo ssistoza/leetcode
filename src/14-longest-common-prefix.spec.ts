@@ -10,4 +10,8 @@ describe.each(longestCommonPrefix)('14. longestCommonPrefix %s', (_, fn) => {
   test('["dog","racecar","car"]', () => {
     expect(fn(['dog', 'racecar', 'car'])).toBe('');
   });
+
+  test('["doggy","doggy daycare","doggy bowl"]', () => {
+    expect(fn(['doggy', 'doggy daycare', 'doggy bowl'])).toBe('doggy');
+  });
 });

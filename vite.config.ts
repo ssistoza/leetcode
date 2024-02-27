@@ -9,5 +9,14 @@ export default defineConfig({
     alias: {
       '~lib': path.resolve(__dirname, './lib'),
     },
+    coverage: {
+      enabled: true,
+      include: ['src'],
+      thresholds: {
+        branches: 100,
+        functions: 100,
+        lines: 100,
+      },
+    },
   },
 });
