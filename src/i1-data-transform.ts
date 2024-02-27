@@ -4,7 +4,7 @@ import { Readable } from 'node:stream';
 import csv from 'fast-csv';
 
 const metData = fs.existsSync('./lib/met.csv');
-if (metData) {
+if (!metData) {
   await fetch(
     'https://media.githubusercontent.com/media/metmuseum/openaccess/master/MetObjects.csv'
   )
